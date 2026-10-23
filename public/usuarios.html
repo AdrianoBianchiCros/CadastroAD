@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>ADSync Web - Usuarios</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <h2>ADSync Web</h2>
+      <div class="subtitle">Sincronizacao AD -> SQL Server</div>
+      <nav>
+        <a href="index.html">Dashboard</a>
+        <a href="usuarios.html" class="active">Usuarios</a>
+        <a href="grupos.html">Grupos</a>
+      </nav>
+      <button class="logout" id="logoutBtn">Sair</button>
+    </aside>
+
+    <main>
+      <h1>Usuarios sincronizados</h1>
+
+      <div class="panel">
+        <div class="toolbar">
+          <input type="search" id="searchInput" placeholder="Buscar por login, nome ou e-mail..." />
+          <a href="usuarios-novo.html" style="margin-left:auto"><button type="button">Novo usuario</button></a>
+        </div>
+        <table>
+          <thead>
+            <tr><th>Login</th><th>Nome</th><th>E-mail</th><th>Departamento</th><th>Cargo</th><th>Status</th></tr>
+          </thead>
+          <tbody id="tableBody">
+            <tr><td colspan="6" class="empty-state">Carregando...</td></tr>
+          </tbody>
+        </table>
+        <div class="pagination">
+          <button class="secondary" id="prevBtn">Anterior</button>
+          <span id="pageInfo"></span>
+          <button class="secondary" id="nextBtn">Proxima</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/usuarios.js"></script>
+</body>
+</html>

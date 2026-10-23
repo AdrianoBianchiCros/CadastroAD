@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>ADSync Web - Novo usuario</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <h2>ADSync Web</h2>
+      <div class="subtitle">Sincronizacao AD -&gt; SQL Server</div>
+      <nav>
+        <a href="index.html">Dashboard</a>
+        <a href="usuarios.html" class="active">Usuarios</a>
+        <a href="grupos.html">Grupos</a>
+      </nav>
+      <button class="logout" id="logoutBtn">Sair</button>
+    </aside>
+
+    <main>
+      <h1>Novo usuario</h1>
+
+      <div class="panel" style="max-width:420px">
+        <p style="color:var(--text-muted); font-size:0.85rem; margin-top:0">
+          Informe apenas o login (sAMAccountName) do usuario no Active
+          Directory. Todos os demais dados (nome, e-mail, cargo,
+          departamento etc.) sao buscados automaticamente no AD e o cadastro
+          e feito sozinho — o mesmo comportamento do cadastro manual do
+          ADSync original (Program.cs), que so pedia o login.
+        </p>
+
+        <form id="novoUsuarioForm">
+          <label for="login">Login (sAMAccountName)</label>
+          <input type="text" id="login" name="login" placeholder="ex: jsilva" autocomplete="off" required />
+
+          <div class="error-message" id="errorMessage"></div>
+          <div id="successMessage" style="color: var(--success); font-size: 0.85rem; min-height: 1.2em; margin-bottom: 0.5rem;"></div>
+
+          <div style="display:flex; gap:0.75rem;">
+            <button type="submit" id="submitBtn">Cadastrar</button>
+            <a href="usuarios.html"><button type="button" class="secondary">Cancelar</button></a>
+          </div>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/usuarios-novo.js"></script>
+</body>
+</html>

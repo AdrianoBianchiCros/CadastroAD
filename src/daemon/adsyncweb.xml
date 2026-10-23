@@ -1,0 +1,30 @@
+<service>
+	<id>adsyncweb.exe</id>
+	<name>ADSyncWeb</name>
+	<description>Painel web ADSync (Active Directory -&gt; SQL Server GrupoTv1_Seguranca).</description>
+	<executable>C:\Program Files\nodejs\node.exe</executable>
+	<argument>C:\Users\acrosoletto.as\Documents\GrupoTV1_AD\3_ProjetoWeb\node_modules\node-windows\lib\wrapper.js</argument>
+	<argument>--file</argument>
+	<argument>C:\Users\acrosoletto.as\Documents\GrupoTV1_AD\3_ProjetoWeb\src\server.js</argument>
+	<argument>--scriptoptions=</argument>
+	<argument>--log</argument>
+	<argument>ADSyncWeb wrapper</argument>
+	<argument>--grow</argument>
+	<argument>0.25</argument>
+	<argument>--wait</argument>
+	<argument>1</argument>
+	<argument>--maxrestarts</argument>
+	<argument>3</argument>
+	<argument>--abortonerror</argument>
+	<argument>n</argument>
+	<argument>--stopparentfirst</argument>
+	<argument>undefined</argument>
+	<logmode>rotate</logmode>
+	<stoptimeout>30sec</stoptimeout>
+	<serviceaccount>
+		<domain>MBLSAOLAPW315</domain>
+		<user>LocalSystem</user>
+		<password></password>
+	</serviceaccount>
+	<workingdirectory>C:\Users\acrosoletto.as\Documents\GrupoTV1_AD\3_ProjetoWeb</workingdirectory>
+</service>

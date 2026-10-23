@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>ADSync Web - Grupos</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <h2>ADSync Web</h2>
+      <div class="subtitle">Sincronizacao AD -> SQL Server</div>
+      <nav>
+        <a href="index.html">Dashboard</a>
+        <a href="usuarios.html">Usuarios</a>
+        <a href="grupos.html" class="active">Grupos</a>
+      </nav>
+      <button class="logout" id="logoutBtn">Sair</button>
+    </aside>
+
+    <main>
+      <h1>Grupos sincronizados</h1>
+
+      <div class="panel">
+        <div class="toolbar">
+          <input type="search" id="searchInput" placeholder="Buscar por nome do grupo..." />
+        </div>
+        <table>
+          <thead>
+            <tr><th>Nome</th><th>DN</th><th>E-mail</th><th>Status</th></tr>
+          </thead>
+          <tbody id="tableBody">
+            <tr><td colspan="4" class="empty-state">Carregando...</td></tr>
+          </tbody>
+        </table>
+        <div class="pagination">
+          <button class="secondary" id="prevBtn">Anterior</button>
+          <span id="pageInfo"></span>
+          <button class="secondary" id="nextBtn">Proxima</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/grupos.js"></script>
+</body>
+</html>

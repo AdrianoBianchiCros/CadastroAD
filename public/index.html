@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>ADSync Web - Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <h2>ADSync Web</h2>
+      <div class="subtitle">Sincronizacao AD -> SQL Server</div>
+      <nav>
+        <a href="index.html" class="active">Dashboard</a>
+        <a href="usuarios.html">Usuarios</a>
+        <a href="grupos.html">Grupos</a>
+      </nav>
+      <button class="logout" id="logoutBtn">Sair</button>
+    </aside>
+
+    <main>
+      <h1>Dashboard</h1>
+
+      <div class="cards">
+        <div class="card">
+          <div class="label">Usuarios ativos</div>
+          <div class="value" id="cardUsuarios">-</div>
+        </div>
+        <div class="card">
+          <div class="label">Grupos ativos</div>
+          <div class="value" id="cardGrupos">-</div>
+        </div>
+        <div class="card">
+          <div class="label">Status</div>
+          <div class="value"><span class="badge" id="cardStatus">-</span></div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Sincronizacao manual</h2>
+        <p class="error-message" id="syncMessage"></p>
+        <div class="toolbar">
+          <button id="btnFull">Sincronizar tudo agora</button>
+          <button class="secondary" id="btnUsuarios">Sincronizar usuarios</button>
+          <button class="secondary" id="btnGrupos">Sincronizar grupos</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Historico de execucoes</h2>
+        <table>
+          <thead>
+            <tr><th>Tipo</th><th>Inicio</th><th>Fim</th><th>Status</th><th>Mensagem</th></tr>
+          </thead>
+          <tbody id="historyBody">
+            <tr><td colspan="5" class="empty-state">Carregando...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
